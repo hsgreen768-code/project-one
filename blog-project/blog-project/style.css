@@ -1,0 +1,196 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background: #8dc1ec;
+  color: #000000;
+}
+
+/* HEADER */
+header {
+  background: #5170ff;
+  border-bottom: 4px solid #000000;
+  padding: 28px 40px;
+  text-align: center;
+}
+
+header h1 {
+  font-family: 'Changa One', sans-serif;
+  font-size: 2.4rem;
+  color: #000000;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+header p {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.85rem;
+  color: #000000;
+  margin-top: 6px;
+  letter-spacing: 1px;
+}
+
+/* Main flexbox layout */
+main {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  max-width: 960px;
+  margin: 24px auto;
+  padding: 0 20px;
+}
+
+/* LEFT COLUMN */
+section:first-of-type {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* right column */
+section:last-of-type {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* IMAGES */
+img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  border: 1px solid #5170ff;
+}
+
+/* text */
+section h2 {
+  font-family: 'Changa One', sans-serif;
+  font-size: 1.1rem;
+  color: #000000;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+section p {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.9rem;
+  color: #000000;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+/* Table */
+table {
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid #000;
+  border-collapse: collapse;
+}
+
+td, th {
+  border: 1px solid #000;
+  padding: 10px;
+}
+
+th, tfoot td {
+  background: #5170ff;
+  color: #000000;
+}
+
+tr:nth-of-type(odd) {
+  background: #5170ff;
+}
+
+/* fun stuff */
+td:hover {
+  background: #5170ff;
+  color: #000000;
+}
+
+/* Footer */
+footer {
+  background: #5170ff;
+  border-top: 4px solid #000000;
+  padding: 20px 40px;
+  text-align: center;
+  margin-top: 24px;
+}
+
+footer p {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.8rem;
+  color: #000000;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 600px) {
+
+  main {
+    flex-direction: column;
+  }
+
+  table, thead, tbody, tfoot, th, td, tr {
+    display: block;
+  }
+
+  td {
+    border: none;
+    border-bottom: 1px solid #5170ff;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  td::before {
+    content: "Placeholder";
+    padding-right: 10px;
+    position: absolute;
+    left: 6px;
+  }
+
+  thead tr {
+    position: absolute;
+    top: -999px;
+    left: -999px;
+  }
+
+  tbody td::before {
+    font-weight: bold;
+  }
+
+  tbody td:nth-of-type(1)::before {
+    content: "Album";
+  }
+
+  tbody td:nth-of-type(2)::before {
+    content: "Artist";
+  }
+
+  tbody td:nth-of-type(3)::before {
+    content: "Genre";
+  }
+
+  tbody td:nth-of-type(4)::before {
+    content: "Year";
+  }
+
+  tfoot td:nth-of-type(odd) {
+    display: none;
+  }
+
+  tfoot td:nth-of-type(2)::before {
+    content: "Total Albums";
+  }
+
+  tfoot td:nth-of-type(4)::before {
+    content: "Years";
+  }
+
+}
